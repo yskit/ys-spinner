@@ -1,6 +1,6 @@
 {
   "name": "ys-spinner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "nodejs loading spinner for ys framework",
   "main": "index.js",
   "scripts": {

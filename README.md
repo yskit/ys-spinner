@@ -23,7 +23,7 @@ const timer = setInterval(() => {
   }
   const j = i % arr.length;
   hk[arr[j]]('use count:', i++);
-}, 1000);
+}, 1000); 
 ```
 
 # License
