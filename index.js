@@ -73,7 +73,6 @@ module.exports = class ConsoleSpinner {
 
   stop() {
     clearInterval(this.timer);
-    logUpdate(``, ...this.value());
     this.word = [];
   }
 }
