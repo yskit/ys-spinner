@@ -6,6 +6,7 @@ module.exports = class ConsoleSpinner {
   constructor(name) {
     this.name = name;
     this.word = [];
+    this.started = false;
     this.frame = elegantSpinner();
     this.update = logUpdate.create(process.stdout, {
       showCursor: true
@@ -23,6 +24,7 @@ module.exports = class ConsoleSpinner {
     this.timer = setInterval(() => {
       this.update(this.frame(), ...this.value());
     }, 50);
+    this.started = true;
   }
 
   log(...args) {
@@ -71,8 +73,12 @@ module.exports = class ConsoleSpinner {
     ];
   }
 
-  stop() {
+  stop(clear) {
     clearInterval(this.timer);
     this.word = [];
+    this.started = false;
+    if (clear) {
+      this.update.clear();
+    }
   }
-}
+};
